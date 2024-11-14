@@ -7,7 +7,7 @@ services:
     environment:
       - NODE_ENV=production
       - MONGODB_URI=mongodb://host.docker.internal:27017/file-sharing
-      - JWT_SECRET=${JWT_SECRET}
+      - JWT_SECRET=106b4f923a448020031b1a49515e738005b28b2b7c09e26f27895f8f787e6bde
       - CLIENT_URL=http://164.92.204.147
     volumes:
       - ./server/uploads:/usr/src/app/server/uploads
