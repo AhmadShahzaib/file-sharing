@@ -1,1 +1,16 @@
- 
+version: "3"
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      - NODE_ENV=production
+      - MONGODB_URI=mongodb://host.docker.internal:27017/file-sharing
+      - JWT_SECRET=${JWT_SECRET}
+      - CLIENT_URL=http://164.92.204.147
+    volumes:
+      - ./server/uploads:/usr/src/app/server/uploads
+    restart: always
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
